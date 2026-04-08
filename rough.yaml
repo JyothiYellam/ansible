@@ -1,0 +1,16 @@
+- name: Checking port
+  hosts: webapp
+  tasks:
+    - name: checking port
+      ansible.builtin.debug:
+        msg: "Running on port {{ PORT }}"
+      
+    - name: checking Env
+      ansible.builtin.debug:
+        msg: "This is frontend server"
+      when: PORT == 80
+  
+    - name: checking environment
+      ansible.builtin.debug:
+        msg: "This is backend server"
+      when: PORT == 8080
