@@ -1,17 +1,28 @@
-- name: Checking port
+
+
+
+
+
+- name: playbook 
   hosts: webapp
-  connection: local
+  become: yes
   tasks:
-    - name: checking port
-      ansible.builtin.debug:
-        msg: "Running on port {{ PORT }}"
-      
-    - name: checking Env
-      ansible.builtin.debug:
-        msg: "This is frontend server"
-      when: PORT == 80
-  
-    - name: checking environment
-      ansible.builtin.debug:
-        msg: "This is backend server"
-      when: PORT == 8080
+    - name: installing nginx
+      ansible.builtin.package:
+        name: nginx 
+        state: present
+      notify: restart nginx
+
+    - name: installing git
+      ansible.builtin.package:
+        name: git 
+        state: present
+    
+
+  handlers:
+     - name: restart nginx
+       ansible.builtin.service:
+          name: nginx
+          state: restarted
+    
+
