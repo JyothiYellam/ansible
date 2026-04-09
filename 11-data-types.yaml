@@ -9,9 +9,9 @@
     MONTHS: 4
     TRAINER: "Sivakumar Reddy"
     TOPICS:
-     - Linux
-     - Shell
-     - Ansible
+      - Linux
+      - Shell
+      - Ansible
   tasks:
      - name: print variables
        ansible.builtin.debug:
