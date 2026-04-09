@@ -6,9 +6,9 @@
    DURATION: 140
    IS_LIVE: true
    DETAILS: 
-    MONTHS: 4
-    TRAINER: "Sivakumar Reddy"
-    TOPICS:
+      MONTHS: 4
+      TRAINER: "Sivakumar Reddy"
+   TOPICS:
     - Linux
     - Shell
     - Ansibl
